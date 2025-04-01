@@ -1,4 +1,4 @@
-###How to run the automated test script:
+### How to run the automated test script:
 
 Install Node.js
 npm install cypress --save-dev
@@ -7,7 +7,7 @@ Select the test file you want to run
 
 
 
-##Automation Approach
+## Automation Approach
 Describe which test you would automate and why?
 
 Automated Tests:
@@ -23,7 +23,7 @@ Why Automate?
 -Early bug detection in CI/CD.
 
 
-##Choice of Automation Framework & Considerations for Maintainability
+## Choice of Automation Framework & Considerations for Maintainability
 
 Framework Selected: Cypress (JavaScript)
 Why Cypress?
@@ -39,7 +39,7 @@ Maintainability Considerations:
 🔹 Integrate with CI/CD to run tests automatically before deployment.
 🔹 Generate reports for better visibility (e.g., Allure, Mochawesome).
 
-##Discuss how you would incorporate CI/CD into your QA process.
+## Discuss how you would incorporate CI/CD into your QA process.
 
 Continuous Integration (CI) in QA
 🔹 Automated Testing in CI Pipelines
@@ -68,12 +68,12 @@ Continuous Integration (CI) in QA
 -Set up real-time monitoring (e.g., Prometheus, Grafana, New Relic) to detect issues early.
 -Use automated rollback mechanisms if issues arise in production.
 
-##Outline how you would manage tests for new features versus regression tests.
+## Outline how you would manage tests for new features versus regression tests.
 
 -New features: Manual + automation (exploratory first).
 -Regression: Automated (prioritize critical paths).
 
-##Mention any performance or security testing strategies you consider important for this application.
+## Mention any performance or security testing strategies you consider important for this application.
 -Performance: Load test with 100+ concurrent users and also perform stress test.
 -Security: OWASP ZAP scans, SQL injection tests.
 -Security: Authentication & Authorization Testing: Verify role-based access control (RBAC) to prevent unauthorized access.

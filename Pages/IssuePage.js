@@ -1,20 +1,38 @@
-class Mp3PlayerPage {
-
-    pageHeader () {
-       return cy.get('.entry-content.content-title.flex-grow-0 > .h4')
+class IssuePage {
+    navigateToRepo(repoName) {
+      cy.visit(`/${repoName}`);
+      cy.get('[data-testid="issues-tab"]').click();
     }
-
-    selectProduct() {
-        return cy.get('.fas.fa-shopping-cart').eq(3).click({force:true})
+  
+    createIssue(title, description) {
+      cy.get('[data-testid="new-issue-button"]').click();
+      cy.get('#issue-title').type(title);
+      cy.get('#issue-description').type(description);
+      cy.get('[data-testid="submit-issue"]').click();
     }
-
-    viewCart() {
-        return cy.get('.btn.btn-primary.btn-block').click({force:true})
+  
+    addLabel(labelName) {
+      cy.get('[data-testid="add-labels-button"]').click();
+      cy.contains(labelName).click();
+      cy.get('body').click(); // Close dropdown
     }
-
-    cartItem() {
-        return cy.get('a[href*="https://ecommerce-playground.lambdatest.io/index.php?route=product/product&product_id=31"]')
+  
+    verifyLabelApplied(labelName) {
+      cy.get('[data-testid="issue-labels"]').should('contain', labelName);
     }
-}
-
-export default new Mp3PlayerPage()
+  
+    commentOnIssue(commentText) {
+      cy.get('[data-testid="issue-comment"]').type(commentText);
+      cy.get('[data-testid="submit-comment"]').click();
+    }
+  
+    closeIssue() {
+      cy.get('[data-testid="close-issue-button"]').click();
+    }
+  
+    verifyIssueClosed() {
+      cy.get('[data-testid="issue-state"]').should('contain', 'closed');
+    }
+  }
+  
+  export default IssuePage;
